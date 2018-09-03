@@ -10,7 +10,7 @@
 if(typeof korz == 'undefined'){
 
     var korz = {
-       router:"[https://tidoxadmin.github.io]"
+       router:"https://tidoxadmin.github.io/tidoxcastreceiver.github.io/"
     };
     korz.config = function(options){
         for(var opt in options){
