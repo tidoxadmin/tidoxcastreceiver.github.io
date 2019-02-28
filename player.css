@@ -192,7 +192,7 @@ body {
 }
 
 .player .progressBar {
-  background-color: rgb(128, 10, 16);
+  background-color: rgb(83, 18, 18);
 }
 
 .player .controls-progress {
@@ -288,7 +288,7 @@ body {
 
 .player .preview-mode-info .preview-mode-timer {
   display: flex;
-  color: rgb(128, 10, 16);
+  color: rgb(83, 18, 18);
   font-size: 22px;
   overflow: hidden;
   width: 80%;
