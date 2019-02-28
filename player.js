@@ -1737,7 +1737,7 @@ sampleplayer.getProtocolFunction_ = function(mediaInformation) {
   var url = mediaInformation.contentId;
   var type = mediaInformation.contentType || '';
   var path = sampleplayer.getPath_(url) || '';
-  if (sampleplayer.getExtension_(path) === 'm3u8' ||
+  if (sampleplayer.getExtension_(path) === 'ts' || sampleplayer.getExtension_(path) === 'm3u8' ||
           type === 'application/x-mpegurl' ||
           type === 'application/vnd.apple.mpegurl') {
     return cast.player.api.CreateHlsStreamingProtocol;
@@ -1824,6 +1824,8 @@ sampleplayer.getType_ = function(media) {
   } else if (sampleplayer.getExtension_(contentUrlPath) === 'webm') {
     return sampleplayer.Type.VIDEO;
   } else if (sampleplayer.getExtension_(contentUrlPath) === 'm3u8') {
+    return sampleplayer.Type.VIDEO;
+  } else if (sampleplayer.getExtension_(contentUrlPath) === 'ts') {
     return sampleplayer.Type.VIDEO;
   } else if (sampleplayer.getExtension_(contentUrlPath) === 'mpd') {
     return sampleplayer.Type.VIDEO;
