@@ -1737,11 +1737,11 @@ sampleplayer.getProtocolFunction_ = function(mediaInformation) {
   var url = mediaInformation.contentId;
   var type = mediaInformation.contentType || '';
   var path = sampleplayer.getPath_(url) || '';
-  if (url.contains("tt=123.mkv&token") || sampleplayer.getExtension_(path) === 'ts' || sampleplayer.getExtension_(path) === 'm3u8' ||
+  if (sampleplayer.getExtension_(path) === 'ts' || sampleplayer.getExtension_(path) === 'm3u8' ||
           type === 'application/x-mpegurl' ||
           type === 'application/vnd.apple.mpegurl') {
-            return null;
-          } else if (sampleplayer.getExtension_(path) === 'mpd' ||
+    return cast.player.api.CreateHlsStreamingProtocol;
+  } else if (sampleplayer.getExtension_(path) === 'mpd' ||
           type === 'application/dash+xml') {
     return cast.player.api.CreateDashStreamingProtocol;
   } else if (path.indexOf('.ism') > -1 ||
