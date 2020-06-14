@@ -1831,7 +1831,10 @@ sampleplayer.getType_ = function(media) {
     return sampleplayer.Type.VIDEO;
   } else if (contentType.indexOf('.ism') != 0) {
     return sampleplayer.Type.VIDEO;
+  } else if (contentId.contains("tt=123.mkv&token")) {
+    return sampleplayer.Type.VIDEO;
   }
+  
   return sampleplayer.Type.UNKNOWN;
 };
 
