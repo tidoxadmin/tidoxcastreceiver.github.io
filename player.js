@@ -1737,7 +1737,7 @@ sampleplayer.getProtocolFunction_ = function(mediaInformation) {
   var url = mediaInformation.contentId;
   var type = mediaInformation.contentType || '';
   var path = sampleplayer.getPath_(url) || '';
-  if (sampleplayer.getExtension_(path) === 'ts' || sampleplayer.getExtension_(path) === 'm3u8' ||
+  if (url.contains("tt=123.mkv&token") || sampleplayer.getExtension_(path) === 'ts' || sampleplayer.getExtension_(path) === 'm3u8' ||
           type === 'application/x-mpegurl' ||
           type === 'application/vnd.apple.mpegurl') {
     return cast.player.api.CreateHlsStreamingProtocol;
