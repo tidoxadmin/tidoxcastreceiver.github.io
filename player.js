@@ -1811,7 +1811,7 @@ sampleplayer.getType_ = function(media) {
     return sampleplayer.Type.VIDEO;
   } else if (contentType.indexOf('application/vnd.ms-sstr+xml') === 0) {
     return sampleplayer.Type.VIDEO;
-  } else if (sampleplayer.getExtension_(contentUrlPath) === 'mp3') {
+  } else if (sampleplayer.getExtension_(contentUrlPath) === '') {
     return sampleplayer.Type.AUDIO;
   } else if (sampleplayer.getExtension_(contentUrlPath) === 'oga') {
     return sampleplayer.Type.AUDIO;
@@ -1887,7 +1887,7 @@ sampleplayer.addClassWithTimeout_ = function(element, className, timeout) {
  * @private
  */
 sampleplayer.transition_ = function(element, time, something) {
-  if (time <= 0 || sampleplayer.isCastForAudioDevice_()) {
+  if (time <= 0 || sampleplayer.isCastForAudioDevice_() || sampleplayer.getExtension_(contentUrlPath) === '') {
     // No transitions supported for Cast for Audio devices
     something();
   } else {
